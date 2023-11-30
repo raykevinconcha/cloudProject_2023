@@ -4,6 +4,18 @@ import json
 import webbrowser
 import pickle
 from tabulate import tabulate
+from ..logging.Exceptions import InputException
+
+from ..validador.validador import obtener_int
+from ..validador.validador import obtener_tipo_topologia
+from ..validador.validador import obtener_infraestructura
+
+from ..validador.validador import obtener_numero_vcpus
+from ..validador.validador import obtener_memoria
+from ..validador.validador import obtener_fs
+from ..validador.validador import obtener_imagen
+
+from ..administracion.administracion import importar_imagen
 
 class Menu:
     def __init__(self):
@@ -164,10 +176,12 @@ class Menu:
             elif sub_opcion == 2:
                 # TODO: Lógica para añadir nodo en topología
                 pass
-            # Implementar lógica similar para las demás opciones
+            elif sub_opcion == 6:
+                importar_imagen()
+                pass
             elif sub_opcion == 7:
                 break
-            # ... [Resto de la implementación de las opciones]
+
 
     def iniciar_menu(self):
         menu_options = [
