@@ -11,7 +11,7 @@ def guardar_usuarios(usuarios):
 def renombrar_nodos(G):
     nombres_maquinas = {nodo: f"vm{nodo}" for nodo in G.nodes()}
     return nx.relabel_nodes(G, nombres_maquinas)
-
+#hola edito esto
 def crear_topologia_lineal(num_maquinas):
     G = nx.path_graph(num_maquinas)
     G = renombrar_nodos(G)
