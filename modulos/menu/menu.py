@@ -114,6 +114,60 @@ class Menu:
             elif sub_opcion == 5:
                 break
 
+    def opcion_2(self):
+        """
+        # TODO se rellenaría un objeto de Topología con los atributos obtenidos
+        tipo_topologia = None
+        infraestructura = None
+        try:
+            print() # se imprime una nueva línea en el menú
+            tipo_topologia = obtener_tipo_topologia()
+            infraestructura = obtener_infraestructura()
+
+            # TODO se pide el número de vms a crear y para cada vm se piden los siguientes datos
+            n_vcpus = obtener_numero_vcpus()
+            memoria = obtener_memoria()
+            # fs = obtener_fs()
+            # imagen = obtener_imagen()
+
+            # TODO preguntar qué VLANs desea interconectar
+
+        except InputException as inputException:
+            print(inputException)
+            return
+
+        # TODO mostrar resumen de información ingresada para que el usuario confirme
+
+        # TODO se crean las VMs usando el módulo correspondiente
+        """
+
+    def opcion_3(self):
+        opciones_opcion_3 = [
+            ("Borrar topología", 1),
+            ("Añadir nodo en topología", 2),
+            ("Eliminar nodo en topología", 3),
+            ("Aumentar capacidad de slice", 4),
+            ("Editar conectividad", 5),
+            ("Añadir imagen", 6),
+            ("Regresar", 7)
+        ]
+        while True:
+            respuesta = inquirer.prompt([
+                inquirer.List('opcion', message="Seleccione una opción", choices=opciones_opcion_3)
+            ])
+
+            sub_opcion = respuesta['opcion']
+
+            if sub_opcion == 1:
+                # TODO: Lógica para borrar topología
+                pass
+            elif sub_opcion == 2:
+                # TODO: Lógica para añadir nodo en topología
+                pass
+            # Implementar lógica similar para las demás opciones
+            elif sub_opcion == 7:
+                break
+            # ... [Resto de la implementación de las opciones]
 
     def iniciar_menu(self):
         menu_options = [
@@ -134,9 +188,9 @@ class Menu:
             if opcion == 1:
                 self.opcion_1()
             elif opcion == 2:
-                self.crear_topologia()
+                self.opcion_2()
             elif opcion == 3:
-                # Lógica para editar topología
+                self.opcion_3()
                 pass
             elif opcion == 4:
                 self.gestionar_usuarios()
